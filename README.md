@@ -30,19 +30,17 @@ npm run lint
 
 #### 搜索界面
 
-![](C:\Users\Bi\Desktop\my-music\README\IMG\Snipaste_2022-07-25_16-30-08.png)
+![](README/IMG/Snipaste_2022-07-25_16-30-08.png)
 
-
-
-![](C:\Users\Bi\Desktop\my-music\README\IMG\migu.png)
+![](README/IMG/miguplay.png)
 
 
 
 #### 下载界面
 
-![](C:\Users\Bi\Desktop\my-music\README\IMG\migudo.play.png)
+![](README/IMG/migudo.play.png)
 
-![](C:\Users\Bi\Desktop\my-music\README\IMG\Snipaste_2022-07-25_16-30-44.png)
+![](README/IMG/Snipaste_2022-07-25_16-30-44.png)
 
 
 
