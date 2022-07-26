@@ -117,7 +117,22 @@ import config from '../../config/config.js'
 						this.url.MusicUrl=json['128']
 						this.url.lyric=json['lyric']
 					}else if(this.type=='网易云'){
-					this.playjson[this.n].url=json[0].url
+						// this.playjson.forEach(function(item,index){
+						// 	let i =index
+						// 	json.forEach(function(url){
+						// 		if(item.id==url.id){
+						// 			this.playjson[i].url=url.url
+						// 		}
+						// 	})
+						// })
+						for(var PlayjsonIndex in this.playjson){
+							for(var jsonIndex in json){
+								if(this.playjson[PlayjsonIndex].id==json[jsonIndex].id){
+									this.playjson[PlayjsonIndex].url=json[jsonIndex].url
+								}
+							}
+						}
+					//this.playjson[this.n].url=json[0].url
 					this.url.MusicUrl=this.playjson[this.n].url
 					}
 				},
@@ -135,17 +150,17 @@ import config from '../../config/config.js'
 								.then(response => (this.changejsonurl(response.data.data)))
 						}else if(this.type=='网易云'){
 							let data = {
-								id:this.playjson[n].id,
+								id:'',
 								br:120000
 							}
-							// this.playjson.forEach(function(item,index){
-							// 	if(index!=0){
-							// 		data.id=data.id+','+item.id
-							// 	}else{
-							// 		data.id=item.id
-							// 	}
-							// })
-							// console.log(data,this.playjson)
+							this.playjson.forEach(function(item,index){
+								if(index!=0){
+									data.id=data.id+','+item.id
+								}else{
+									data.id=item.id
+								}
+							})
+							console.log(data,this.playjson)
 							this.$axios.post(config.Music163.GetDonwoladUrl,data)
 							.then(response => (this.changejsonurl(response.data.data)))
 						}
